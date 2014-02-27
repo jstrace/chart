@@ -13,6 +13,10 @@ $ npm install ascii-chart
 
 ## Example
 
+ When `data` exceeds the available width the data will "roll" to the tail-end
+ of the array. This may become an option in the future, but that's the default
+ behaviour for now ;)
+
 ```js
 var chart = require('ascii-chart');
 var clear = require('clear');
