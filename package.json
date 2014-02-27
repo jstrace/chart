@@ -1,0 +1,25 @@
+{
+  "name": "ascii-chart",
+  "version": "1.0.0",
+  "repository": "visionmedia/node-ascii-chart",
+  "description": "Ascii bar chart",
+  "keywords": [
+    "ascii",
+    "chart",
+    "bar",
+    "stats",
+    "data",
+    "cli",
+    "terminal"
+  ],
+  "dependencies": {
+    "array-matrix": "0.0.1"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*",
+    "bytes": "~0.2.1",
+    "clear": "0.0.1"
+  },
+  "license": "MIT"
+}
