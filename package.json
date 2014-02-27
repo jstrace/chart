@@ -13,7 +13,7 @@
     "terminal"
   ],
   "dependencies": {
-    "array-matrix": "0.0.1"
+    "array-matrix": "1.0.0"
   },
   "devDependencies": {
     "mocha": "*",
