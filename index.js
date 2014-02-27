@@ -73,9 +73,14 @@ function chart(data, opts) {
     out[h - 1][x++] = ' ';
   }
 
+  // strip excess from head
+  // so that data may "roll"
+  var space = Math.floor(w / 2) - 1;
+  var excess = Math.max(0, data.length - space);
+  if (excess) data = data.slice(excess);
+
   // plot data
   var x = labelw + labelp + 2;
-  data = data.slice(0, Math.floor(w / 2) - 1);
   for (var i = 0; i < data.length; i++) {
     var d = data[i];
     var p = d / m;
