@@ -8,7 +8,7 @@
 ## Installation
 
 ```
-$ npm install jstrace/ascii-chart
+$ npm install jstrace/chart
 ```
 
 ## Example
@@ -18,7 +18,7 @@ $ npm install jstrace/ascii-chart
  behaviour for now ;)
 
 ```js
-var chart = require('ascii-chart');
+var chart = require('chart');
 var clear = require('clear');
 
 var data = [1, 2, ...];
