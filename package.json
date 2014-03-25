@@ -1,6 +1,6 @@
 {
   "name": "chart",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "repository": "segmentio/chart",
   "description": "Ascii bar chart",
   "keywords": [
