@@ -8,7 +8,7 @@
 ## Installation
 
 ```
-$ npm install ascii-chart
+$ npm install jstrace/ascii-chart
 ```
 
 ## Example
