@@ -1,5 +1,5 @@
 
-# ascii-chart
+# Chart
 
   Ascii bar chart for nodejs.
 
