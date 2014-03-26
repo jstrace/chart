@@ -17,6 +17,7 @@ module.exports = chart;
  * - `width` total chart width [130]
  * - `height` total chart height [30]
  * - `padding` edge padding [3]
+ * - `labels` x-asis labels [[]]
  *
  * @param {Array} data
  * @param {Object} [opts]
@@ -30,6 +31,10 @@ function chart(data, opts) {
   // options
   var w = opts.width || 130;
   var h = opts.height || 30;
+  var labels = opts.labels || [];
+  
+  // height with labels
+  var lh = h + maxStr(labels);
 
   // padding
   var pad = opts.padding || 3;
@@ -37,7 +42,7 @@ function chart(data, opts) {
   h -= pad * 2;
 
   // setup
-  var out = matrix(w, h);
+  var out = matrix(w, lh);
   var m = max(data) || 0;
   var label = Math.abs(m).toString();
   var labelw = label.length;
@@ -48,7 +53,7 @@ function chart(data, opts) {
   var cw = w - labelw - labelp;
 
   // fill
-  for (var y = 0; y < h; y++) {
+  for (var y = 0; y < lh; y++) {
     for (var x = 0; x < w; x++) {
       out[y][x] = ' ';
     }
@@ -72,7 +77,7 @@ function chart(data, opts) {
     out[h - 1][x++] = '․';
     out[h - 1][x++] = ' ';
   }
-
+  
   // strip excess from head
   // so that data may "roll"
   var space = Math.floor(w / 2) - 1;
@@ -90,6 +95,14 @@ function chart(data, opts) {
 
     while (y--) {
       out[Math.abs(y - h) - 2][x] = c;
+    }
+    
+    // x-axis labels
+    if(labels[i]) {
+      var lab = "" + labels[i];
+      for (var j = 0; j < lab.length; j++) {
+        out[h + j][x] = lab[j];
+      }
     }
 
     x += 2;
@@ -141,4 +154,20 @@ function max(data) {
   }
 
   return n;
+}
+
+/**
+ * Return string's max length in array 
+ */
+function maxStr(data) {
+  
+  var n = 0;
+  
+  for (var i = 1; i < data.length; i++) {
+    var v = "" + data[i];
+    n = v.length > n ? v.length : n;
+  }
+  
+  return n;
+  
 }
