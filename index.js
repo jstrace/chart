@@ -17,7 +17,7 @@ module.exports = chart;
  * - `width` total chart width [130]
  * - `height` total chart height [30]
  * - `padding` edge padding [3]
- * - `labels` x-asis labels [[]]
+ * - `labels` x-axis labels [[]]
  *
  * @param {Array} data
  * @param {Object} [opts]
@@ -99,7 +99,7 @@ function chart(data, opts) {
     
     // x-axis labels
     if(labels[i]) {
-      var lab = "" + labels[i];
+      var lab = '' + labels[i];
       for (var j = 0; j < lab.length; j++) {
         out[h + j][x] = lab[j];
       }
@@ -164,7 +164,7 @@ function maxStr(data) {
   var n = 0;
   
   for (var i = 1; i < data.length; i++) {
-    var v = "" + data[i];
+    var v = '' + data[i];
     n = v.length > n ? v.length : n;
   }
   
