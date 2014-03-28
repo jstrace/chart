@@ -34,7 +34,8 @@ function chart(data, opts) {
   var labels = opts.labels || [];
   
   // height with labels
-  var lh = h + maxStr(labels);
+  var lh = h;
+  h -= 1;
 
   // padding
   var pad = opts.padding || 3;
@@ -101,7 +102,7 @@ function chart(data, opts) {
     if(labels[i]) {
       var lab = '' + labels[i];
       for (var j = 0; j < lab.length; j++) {
-        out[h + j][x] = lab[j];
+        out[h][x + j] = lab[j];
       }
     }
 
@@ -154,20 +155,4 @@ function max(data) {
   }
 
   return n;
-}
-
-/**
- * Return string's max length in array 
- */
-function maxStr(data) {
-  
-  var n = 0;
-  
-  for (var i = 1; i < data.length; i++) {
-    var v = '' + data[i];
-    n = v.length > n ? v.length : n;
-  }
-  
-  return n;
-  
 }
