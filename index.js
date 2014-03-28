@@ -98,15 +98,24 @@ function chart(data, opts) {
       out[Math.abs(y - h) - 2][x] = c;
     }
     
-    // x-axis labels
-    if(labels[i]) {
-      var lab = '' + labels[i];
-      for (var j = 0; j < lab.length; j++) {
-        out[h][x + j] = lab[j];
-      }
-    }
-
     x += 2;
+  }
+  
+  // x-axis labels
+  var labelLength = labels.length;
+  var labelWidth = labelLength > 0 ? data.length * 2 - labels[labelLength - 1].length : 0;
+  for (var i = 0; i < labelLength; i++) {
+    var lab = '' + labels[i];
+    
+    // if there's only one label position
+    // it in the middle
+    var part = i / (labelLength - 1);
+    if(isNaN(part)) part = 0.5;
+    var pos = Math.floor(part * labelWidth);
+    
+    for (var j = 0; j < lab.length; j++) {
+      out[h][pad + pos + j] = lab[j];
+    }
   }
 
   return padding(string(out, h), pad);
