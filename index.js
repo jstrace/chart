@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -28,8 +27,12 @@ function chart(data, opts) {
   opts = opts || {};
 
   // options
-  var w = opts.width || 130;
-  var h = opts.height || 30;
+  var w = opts.width || (opts.fill) ? process.stdout.columns : 130;
+  var h = opts.height || (opts.fill) ? process.stdout.rows : 30;
+
+  // bar characters
+  var pos = opts.pos || '█',
+    neg = opts.neg || '░';
 
   // padding
   var pad = opts.padding || 3;
@@ -85,7 +88,7 @@ function chart(data, opts) {
     var d = data[i];
     var p = d / m;
     var y = Math.round((h - 2) * p);
-    var c = y < 0 ? '░' : '█';
+    var c = y < 0 ? neg : pos;
     if (y < 0) y = -y;
 
     while (y--) {

@@ -1,4 +1,3 @@
-
 var chart = require('..');
 var clear = require('clear');
 
@@ -52,4 +51,8 @@ var data = [
 ];
 
 clear();
-console.log(chart(data));
+console.log(chart(data, {
+  fill: true,
+  pos: '+',
+  neg: '-'
+}));
