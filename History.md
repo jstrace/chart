@@ -1,8 +1,15 @@
 
-1.1.1 / 2014-03-25
+1.2.0 / 2014-03-25
 ==================
 
- * rename
+ * add options to set point characters
+ * update docs
+ * update repo link
+
+ 1.1.1 / 2014-03-25
+ ==================
+
+  * rename
 
 1.1.0 / 2014-02-27
 ==================
