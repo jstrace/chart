@@ -24,7 +24,12 @@ var clear = require('clear');
 var data = [1, 2, ...];
 
 clear();
-console.log(chart(data, { width: 130, height: 30 }));
+console.log(chart(data, {
+  width: 130,
+  height: 30,
+  pointChar: '█',
+  negativePointChar: '░'
+}));
 ```
 
 # License
