@@ -17,6 +17,8 @@ module.exports = chart;
  * - `width` total chart width [130]
  * - `height` total chart height [30]
  * - `padding` edge padding [3]
+ * - `pointChar` character used to plot a point [█]
+ * - `negativePointChar` character used to plot a negative point [░]
  *
  * @param {Array} data
  * @param {Object} [opts]
@@ -30,6 +32,8 @@ function chart(data, opts) {
   // options
   var w = opts.width || 130;
   var h = opts.height || 30;
+  var pc = opts.pointChar || '█';
+  var nc = opts.negativePointChar || '░';
 
   // padding
   var pad = opts.padding || 3;
@@ -85,7 +89,7 @@ function chart(data, opts) {
     var d = data[i];
     var p = d / m;
     var y = Math.round((h - 2) * p);
-    var c = y < 0 ? '░' : '█';
+    var c = y < 0 ? nc : pc;
     if (y < 0) y = -y;
 
     while (y--) {
