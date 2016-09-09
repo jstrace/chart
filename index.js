@@ -38,7 +38,7 @@ function chart(data, opts) {
   var ac = opts.axisChar || '.';
 
   // padding
-  var pad = opts.padding || 3;
+  var pad = typeof opts.padding === 'number' ? opts.padding : 3;
   w -= pad * 2;
   h -= pad * 2;
 
@@ -101,7 +101,9 @@ function chart(data, opts) {
     x += 2;
   }
 
-  return padding(string(out, h), pad);
+  // Return string
+  var str = string(out, h);
+  return pad ? padding(str, pad) : str;
 }
 
 /**
