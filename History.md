@@ -1,4 +1,11 @@
 
+1.3.0 / 2014-09-09
+==================
+
+ * add option to set axis character
+ * change default axis character to '.'
+
+
 1.2.0 / 2014-09-05
 ==================
 
