@@ -1,5 +1,5 @@
 
-1.2.0 / 2014-03-25
+1.2.0 / 2014-09-05
 ==================
 
  * add options to set point characters
