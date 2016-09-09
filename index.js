@@ -19,6 +19,7 @@ module.exports = chart;
  * - `padding` edge padding [3]
  * - `pointChar` character used to plot a point [█]
  * - `negativePointChar` character used to plot a negative point [░]
+ * - `axisChar` character used to draw axis [.]
  *
  * @param {Array} data
  * @param {Object} [opts]
@@ -34,6 +35,7 @@ function chart(data, opts) {
   var h = opts.height || 30;
   var pc = opts.pointChar || '█';
   var nc = opts.negativePointChar || '░';
+  var ac = opts.axisChar || '.';
 
   // padding
   var pad = opts.padding || 3;
@@ -67,13 +69,13 @@ function chart(data, opts) {
 
   // y-axis
   for (var y = 0; y < h; y++) {
-    out[y][labelw + labelp] = '.';
+    out[y][labelw + labelp] = ac;
   }
 
   // x-axis
   var x = labelw + labelp;
   while (x < w) {
-    out[h - 1][x++] = '.';
+    out[h - 1][x++] = ac;
     out[h - 1][x++] = ' ';
   }
 
