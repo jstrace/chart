@@ -18,7 +18,7 @@ $ npm install jstrace/chart
  behaviour for now ;)
 
 ```js
-var chart = require('chart');
+var chart = require('ascii-chart');
 var clear = require('clear');
 
 var data = [1, 2, ...];
