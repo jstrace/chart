@@ -1,6 +1,6 @@
 {
   "name": "chart",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "repository": "jstrace/chart",
   "description": "Ascii bar chart",
   "keywords": [
