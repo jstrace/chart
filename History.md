@@ -3,19 +3,19 @@
 
  * Fix size calculation
 
-1.3.1 / 2014-09-09
+1.3.1 / 2016-09-09
 ==================
 
  * allow 0 padding
 
-1.3.0 / 2014-09-09
+1.3.0 / 2016-09-09
 ==================
 
  * add option to set axis character
  * change default axis character to '.'
 
 
-1.2.0 / 2014-09-05
+1.2.0 / 2016-09-05
 ==================
 
  * add options to set point characters
