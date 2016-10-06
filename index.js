@@ -142,10 +142,10 @@ function string(out) {
  */
 
 function max(data) {
-  var n = data[0];
+  var n = Math.abs(data[0]);
 
   for (var i = 1; i < data.length; i++) {
-    n = data[i] > n ? data[i] : n;
+    n = Math.abs(data[i]) > n ? Math.abs(data[i]) : n;
   }
 
   return n;
