@@ -36,6 +36,8 @@ function chart(data, opts) {
   var pc = opts.pointChar || '█';
   var nc = opts.negativePointChar || '░';
   var ac = opts.axisChar || '.';
+  var dense = opts.dense || false;
+  var truncate = opts.truncate || true;
 
   // padding
   var pad = typeof opts.padding === 'number' ? opts.padding : 3;
@@ -81,9 +83,15 @@ function chart(data, opts) {
 
   // strip excess from head
   // so that data may "roll"
-  var space = Math.floor(w / 2) - 1;
+  var space = dense ? Math.floor(w) - 1 : Math.floor(w / 2) - 1;
   var excess = Math.max(0, data.length - space);
-  if (excess) data = data.slice(excess);
+  if (excess) {
+    if (truncate) {
+      data = data.slice(excess);
+    } else {
+      throw new Error(`Could not fit last ${excess} data points.`);
+    }
+  }
 
   // plot data
   var x = labelw + labelp + 2;
@@ -98,7 +106,7 @@ function chart(data, opts) {
       out[Math.abs(y - h) - 2][x] = c;
     }
 
-    x += 2;
+    x += dense ? 1 : 2;
   }
 
   // Return string
